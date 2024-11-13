@@ -1,0 +1,54 @@
+{
+  "nav.home": "Strona główna",
+  "nav.about": "O mnie",
+  "nav.portfolio": "Doświadczenie",
+  "nav.contact": "Kontakt",
+
+  "home.intro": "Jestem programistą Java z 4-letnim doświadczeniem",
+  "home.description": "Specjalizuję się w tworzeniu aplikacji backendowych i frontendowych",
+  "home.phone": "Telefon",
+  "home.email": "Email",
+  "home.location": "Lokalizacja",
+  "home.contact": "Skontaktuj się",
+
+  "about.title": "O mnie",
+  "about.aboutMe": "O mnie",
+  "about.aboutMeContent": "Jestem programistą z czteroletnim doświadczeniem. Podczas jednej z moich poprzednich prac w firmie meblarskiej miałem okazję zarządzać zespołem ludzi i pracować bezpośrednio z klientem. To właśnie tam nauczyłem się z pierwszej ręki, jak ważne jest zadowolenie klienta. Polubiłem również zarządzanie zespołem i chciałbym kiedyś zarządzać zespołem IT. W mojej obecnej pracy w Mikronice bezpośrednio koordynuję z klientami, aby zrozumieć i spełnić ich oczekiwania, jednocześnie ulepszając i utrzymując rozwiązania programowe firmy.",
+  "about.education": "Edukacja",
+  "about.educationContent": "09.2017 – 01.2021: Licencjat z Informatyki (Specjalizacja Programowanie)",
+  "about.educationInstitution": "Akademia Informatyki i Zarządzania „Copernicus\" we Wrocławiu",
+  "about.skills": "Umiejętności",
+  "about.skillsList": [
+    "Java: Spring MVC, Spring Security, Spring Boot, Play, Hibernate, Maven",
+    "REST API",
+    "GIT, SVN",
+    "Wzorce projektowe",
+    "JavaScript: React i AngularJS",
+    "Inne języki programowania i znaczników: C++, HTML, CSS",
+    "Metody zarządzania Scrum i Kanban",
+    "Bazy danych: MySQL, Oracle BDMS, zapytania SQL",
+    "Język angielski – B2",
+    "Język niemiecki – A2 i wciąż się uczę..."
+  ],
+  "about.interests": "Zainteresowania",
+  "about.interestsList": [
+    "Historia starożytna i współczesna",
+    "Biblia i archeologia biblijna",
+    "Biologia, genetyka, unikalne formy życia",
+    "Nauczanie matematyki",
+    "Uczestnictwo w obozach młodzieżowych jako opiekun i instruktor sportów zimowych",
+    "Język niemiecki"
+  ],
+
+  "portfolio.title": "Doświadczenie zawodowe",
+  "portfolio.responsibilities": "Obowiązki",
+  "portfolio.technologies": "Technologie",
+
+  "contact.title": "Kontakt",
+  "contact.name": "Imię",
+  "contact.email": "Email",
+  "contact.message": "Wiadomość",
+  "contact.send": "Wyślij",
+
+  "footer.rights": "Wszelkie prawa zastrzeżone."
+}

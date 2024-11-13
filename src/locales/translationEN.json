@@ -1,0 +1,54 @@
+{
+  "nav.home": "Home",
+  "nav.about": "About",
+  "nav.portfolio": "Experience",
+  "nav.contact": "Contact",
+
+  "home.intro": "I'm a Java developer with 4 years of experience",
+  "home.description": "I specialize in creating backend and frontend applications",
+  "home.phone": "Phone",
+  "home.email": "Email",
+  "home.location": "Location",
+  "home.contact": "Contact me",
+
+  "about.title": "About me",
+  "about.aboutMe": "About me",
+  "about.aboutMeContent": "I am a software developer with four years of experience. During one of my past jobs at a furniture company, I had the opportunity to manage a team of people and to work directly with the client. This is also where I learned firsthand how important it is to satisfy the client. I also enjoyed managing a team and would like to manage an IT team someday. In my current job at Mikronika, I directly coordinate with clients to understand and satisfy their expectations while improving and maintaining the company's software solutions.",
+  "about.education": "Education",
+  "about.educationContent": "09.2017 – 01.2021: Bachelor of Computer Science (Programming Focus)",
+  "about.educationInstitution": "Academy of Computer Science and Management „Copernicus\" in Wrocław",
+  "about.skills": "Skills",
+  "about.skillsList": [
+    "Java: Spring MVC, Spring Security, Spring Boot, Play, Hibernate, Maven",
+    "REST APIs",
+    "GIT, SVN",
+    "Software Design Patterns",
+    "JavaScript: React and AngularJS",
+    "Other programming and markup languages: C++, HTML, CSS",
+    "Scrum and Kanban management methods",
+    "Databases: MySQL, Oracle BDMS, SQL queries",
+    "English – B2",
+    "German – A2 and I'm still learning..."
+  ],
+  "about.interests": "Interests",
+  "about.interestsList": [
+    "Ancient and modern history",
+    "The Bible and Bible-related archeology",
+    "Biology, genetics, unique life forms",
+    "Teaching math",
+    "Attending youth camps as councilor and winter sports teacher",
+    "The German language"
+  ],
+
+  "portfolio.title": "Work Experience",
+  "portfolio.responsibilities": "Responsibilities",
+  "portfolio.technologies": "Technologies",
+
+  "contact.title": "Contact",
+  "contact.name": "Name",
+  "contact.email": "Email",
+  "contact.message": "Message",
+  "contact.send": "Send",
+
+  "footer.rights": "All rights reserved."
+}

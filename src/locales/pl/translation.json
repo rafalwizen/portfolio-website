@@ -1,0 +1,31 @@
+{
+  "nav.home": "Strona główna",
+  "nav.about": "O mnie",
+  "nav.portfolio": "Doświadczenie",
+  "nav.contact": "Kontakt",
+
+  "home.intro": "Jestem programistą Java z 4-letnim doświadczeniem",
+  "home.description": "Specjalizuję się w tworzeniu aplikacji backendowych i frontendowych",
+  "home.phone": "Telefon",
+  "home.email": "Email",
+  "home.location": "Lokalizacja",
+  "home.contact": "Skontaktuj się",
+
+  "about.title": "O mnie",
+  "about.aboutMe": "O mnie",
+  "about.education": "Edukacja",
+  "about.skills": "Umiejętności",
+  "about.interests": "Zainteresowania",
+
+  "portfolio.title": "Doświadczenie zawodowe",
+  "portfolio.responsibilities": "Obowiązki",
+  "portfolio.technologies": "Technologie",
+
+  "contact.title": "Kontakt",
+  "contact.name": "Imię",
+  "contact.email": "Email",
+  "contact.message": "Wiadomość",
+  "contact.send": "Wyślij",
+
+  "footer.rights": "Wszelkie prawa zastrzeżone."
+}

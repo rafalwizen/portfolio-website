@@ -1,42 +1,71 @@
+import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+
 export default function Contact() {
+    const { t } = useTranslation()
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    })
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target
+        setFormData(prevState => ({ ...prevState, [name]: value }))
+    }
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+        // Handle form submission here
+        console.log(formData)
+    }
+
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
-            <div className="max-w-lg mx-auto">
-                <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <section id="contact" className="py-20 bg-gray-50">
+            <div className="container mx-auto px-4">
+                <h2 className="text-3xl font-bold mb-8">{t('contact.title')}</h2>
+                <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
                     <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-                            Name
-                        </label>
-                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Your Name" />
+                        <label htmlFor="name" className="block mb-2">{t('contact.name')}</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+                        />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-                            Email
-                        </label>
-                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Your Email" />
+                        <label htmlFor="email" className="block mb-2">{t('contact.email')}</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+                        />
                     </div>
-                    <div className="mb-6">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
-                            Message
-                        </label>
-                        <textarea className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Your Message" rows={4}></textarea>
+                    <div className="mb-4">
+                        <label htmlFor="message" className="block mb-2">{t('contact.message')}</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                            rows={4}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+                        ></textarea>
                     </div>
-                    <div className="flex items-center justify-between">
-                        <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300" type="button">
-                            Send Message
-                        </button>
-                    </div>
+                    <button type="submit" className="bg-black text-white px-6 py-2 rounded hover:bg-gray-800">
+                        {t('contact.send')}
+                    </button>
                 </form>
-                <div className="mt-8">
-                    <h3 className="text-xl font-semibold mb-4">Connect with me</h3>
-                    <div className="flex space-x-4">
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">LinkedIn</a>
-                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">GitHub</a>
-                        {/* Add more social media links as needed */}
-                    </div>
-                </div>
             </div>
-        </div>
+        </section>
     )
 }

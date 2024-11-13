@@ -1,45 +1,70 @@
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+
+interface Experience {
+    company: string
+    position: string
+    period: string
+    responsibilities: string[]
+    technologies: string[]
+}
+
 export default function Portfolio() {
-    const projects = [
+    const { t } = useTranslation()
+
+    const experiences: Experience[] = [
         {
-            title: "Project 1",
-            description: "A brief description of the project and its goals.",
-            technologies: ["Java", "Spring Boot", "React"],
-            link: "https://project1.com",
-            github: "https://github.com/username/project1",
-            image: "/placeholder.svg?height=300&width=400"
-        },
-        {
-            title: "Project 2",
-            description: "Another project description showcasing different skills.",
-            technologies: ["JavaScript", "Node.js", "Express"],
-            link: "https://project2.com",
-            github: "https://github.com/username/project2",
-            image: "/placeholder.svg?height=300&width=400"
-        },
-        // Add more projects as needed
+            company: 'MIKRONIKA Sp. z o.o.',
+            position: 'Java developer',
+            period: '11.2020 – present',
+            responsibilities: [
+                'Analyzing and adjusting business requirements',
+                'Implementing new backend and frontend software components',
+                'Fixing software bugs',
+                'Implementing REST API interfaces',
+                'Coordinating directly with the client to determine and satisfy client expectations'
+            ],
+            technologies: [
+                'Java 8 with Spring, Hibernate, Play',
+                'React and AngularJS',
+                'MySQL and Oracle',
+                'GIT and SVN'
+            ]
+        }
     ]
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h2 className="text-3xl font-bold mb-6">Portfolio</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-                {projects.map((project, index) => (
-                    <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-                        <div className="p-6">
-                            <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                            <p className="text-gray-600 mb-4">{project.description}</p>
+        <section id="portfolio" className="py-20 bg-white">
+            <div className="container mx-auto px-4">
+                <h2 className="text-3xl font-bold mb-8">{t('portfolio.title')}</h2>
+                <div className="space-y-12">
+                    {experiences.map((exp, index) => (
+                        <div key={index} className="bg-gray-50 rounded-lg shadow-md overflow-hidden p-6">
+                            <h3 className="text-2xl font-semibold mb-2">{exp.company}</h3>
+                            <p className="text-xl mb-2">{exp.position}</p>
+                            <p className="text-gray-600 mb-4">{exp.period}</p>
                             <div className="mb-4">
-                                <strong>Technologies:</strong> {project.technologies.join(", ")}
+                                <h4 className="font-semibold mb-2">{t('portfolio.responsibilities')}</h4>
+                                <ul className="list-disc list-inside">
+                                    {exp.responsibilities.map((resp, respIndex) => (
+                                        <li key={respIndex}>{resp}</li>
+                                    ))}
+                                </ul>
                             </div>
-                            <div className="flex space-x-4">
-                                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">View Project</a>
-                                <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">GitHub</a>
+                            <div>
+                                <h4 className="font-semibold mb-2">{t('portfolio.technologies')}</h4>
+                                <div className="flex flex-wrap gap-2">
+                                    {exp.technologies.map((tech, techIndex) => (
+                                        <span key={techIndex} className="bg-gray-200 rounded-full px-3 py-1 text-sm">
+                      {tech}
+                    </span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
-        </div>
+        </section>
     )
 }

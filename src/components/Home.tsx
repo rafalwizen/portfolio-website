@@ -1,83 +1,29 @@
+import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
-import { Button } from './ui/button'
-import { Card, CardContent } from './ui/card'
 
 export default function Home() {
     const { t } = useTranslation()
 
     return (
-        <>
-            <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-                <div className="flex max-w-[980px] flex-col items-start gap-2">
-                    <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-                        {t('home.welcome')}
-                    </h1>
-                    <p className="max-w-[700px] text-lg text-muted-foreground">
-                        {t('home.intro')}
-                    </p>
-                </div>
-                <div className="flex gap-4">
-                    <Button asChild>
-                        <Link to="/contact">{t('home.contactButton')}</Link>
-                    </Button>
-                    <Button asChild variant="outline">
-                        <Link to="/about">{t('home.learnMoreButton')}</Link>
-                    </Button>
-                </div>
-            </section>
-            <section className="container py-8 md:py-12 lg:py-24">
-                <div className="mx-auto grid max-w-5xl items-center gap-6 lg:grid-cols-2 lg:gap-12">
-                    <img
-                        alt={t('home.imageAlt')}
-                        className="mx-auto aspect-square overflow-hidden rounded-full object-cover object-center"
-                        height="300"
-                        width="300"
-                        src="/placeholder.svg"
-                    />
-                    <div className="flex flex-col justify-center space-y-4">
-                        <div className="space-y-2">
-                            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t('home.aboutTitle')}</h2>
-                            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                                {t('home.aboutContent')}
-                            </p>
-                        </div>
-                        <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                            <Button asChild>
-                                <Link to="/portfolio">{t('home.viewWorkButton')}</Link>
-                            </Button>
-                            <Button asChild variant="outline">
-                                <Link to="/contact">{t('home.getInTouchButton')}</Link>
-                            </Button>
-                        </div>
+        <section id="home" className="py-20 bg-white">
+            <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
+                <div className="md:w-1/2 mb-8 md:mb-0">
+                    <h1 className="text-4xl font-bold mb-4">Rafał Wiżeń</h1>
+                    <p className="text-xl mb-6">{t('home.intro')}</p>
+                    <p className="mb-6">{t('home.description')}</p>
+                    <div className="space-y-2">
+                        <p><strong>{t('home.phone')}:</strong> 726 593 099</p>
+                        <p><strong>{t('home.email')}:</strong> rafal.wizen@gmail.com</p>
+                        <p><strong>{t('home.location')}:</strong> Tarnowskie Góry</p>
                     </div>
+                    <a href="#contact" className="inline-block mt-6 bg-black text-white px-6 py-2 rounded hover:bg-gray-800">
+                        {t('home.contact')}
+                    </a>
                 </div>
-            </section>
-            <section className="container py-8 md:py-12 lg:py-24">
-                <div className="mx-auto grid max-w-5xl gap-8">
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">{t('home.skillsTitle')}</h2>
-                    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                        <Card>
-                            <CardContent className="flex flex-col gap-2 p-6">
-                                <h3 className="font-bold">{t('home.skills.frontend.title')}</h3>
-                                <p className="text-sm text-muted-foreground">{t('home.skills.frontend.description')}</p>
-                            </CardContent>
-                        </Card>
-                        <Card>
-                            <CardContent className="flex flex-col gap-2 p-6">
-                                <h3 className="font-bold">{t('home.skills.backend.title')}</h3>
-                                <p className="text-sm text-muted-foreground">{t('home.skills.backend.description')}</p>
-                            </CardContent>
-                        </Card>
-                        <Card>
-                            <CardContent className="flex flex-col gap-2 p-6">
-                                <h3 className="font-bold">{t('home.skills.database.title')}</h3>
-                                <p className="text-sm text-muted-foreground">{t('home.skills.database.description')}</p>
-                            </CardContent>
-                        </Card>
-                    </div>
+                <div className="md:w-1/2">
+                    <img src="/path-to-your-image.jpg" alt="Rafał Wiżeń" className="rounded-full w-64 h-64 object-cover mx-auto" />
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     )
 }

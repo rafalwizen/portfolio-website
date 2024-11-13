@@ -1,42 +1,46 @@
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+
 export default function About() {
+    const { t } = useTranslation()
+
+    // Explicitly type the interests as an array of strings
+    const interests: string[] = t('about.interestsList', { returnObjects: true }) as string[]
+
+    const skills: string[] = t('about.skillsList', { returnObjects: true }) as string[]
+
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h2 className="text-3xl font-bold mb-6">About Me</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                    <h3 className="text-2xl font-semibold mb-4">Professional Journey</h3>
-                    <p className="mb-4">
-                        I am a software developer with four years of experience. During one of my past jobs at a furniture company,
-                        I had the opportunity to manage a team and work directly with clients. This experience taught me the
-                        importance of client satisfaction and effective team management.
-                    </p>
-                    <p className="mb-4">
-                        In my current role at Mikronika, I coordinate directly with clients to understand and meet their expectations
-                        while improving and maintaining the company's software solutions.
-                    </p>
+        <section id="about" className="py-20 bg-gray-50">
+            <div className="container mx-auto px-4">
+                <h2 className="text-3xl font-bold mb-8">{t('about.title')}</h2>
+                <div className="mb-8">
+                    <h3 className="text-2xl font-semibold mb-4">{t('about.aboutMe')}</h3>
+                    <p className="mb-4">{t('about.aboutMeContent')}</p>
+                </div>
+                <div className="mb-8">
+                    <h3 className="text-2xl font-semibold mb-4">{t('about.education')}</h3>
                     <p>
-                        My approach to web design is rooted in the belief that there are no impossible tasks. With creativity,
-                        persistence, and the right tools, any challenge can be overcome.
+                        <strong>{t('about.educationContent')}</strong><br />
+                        {t('about.educationInstitution')}
                     </p>
                 </div>
-                <div>
-                    <h3 className="text-2xl font-semibold mb-4">Skills & Tools</h3>
-                    <ul className="list-disc list-inside mb-4">
-                        <li>Java (Spring MVC, Spring Security, Spring Boot, Play, Hibernate)</li>
-                        <li>JavaScript (React, AngularJS)</li>
-                        <li>REST APIs</li>
-                        <li>Version Control (Git, SVN)</li>
-                        <li>Software Design Patterns</li>
-                        <li>HTML, CSS</li>
-                        <li>Scrum and Kanban management methods</li>
-                        <li>Databases (MySQL, Oracle DBMS, SQL queries)</li>
+                <div className="mb-8">
+                    <h3 className="text-2xl font-semibold mb-4">{t('about.skills')}</h3>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {skills.map((skill, index) => (
+                            <li key={index} className="bg-white rounded-lg p-2 shadow">{skill}</li>
+                        ))}
                     </ul>
-                    <h3 className="text-2xl font-semibold mb-4">Education</h3>
-                    <p>Bachelor of Computer Science (Programming Focus)</p>
-                    <p>Academy of Computer Science and Management "Copernicus" in Wrocław</p>
-                    <p>September 2017 - January 2021</p>
+                </div>
+                <div>
+                    <h3 className="text-2xl font-semibold mb-4">{t('about.interests')}</h3>
+                    <ul className="list-disc list-inside">
+                        {interests.map((interest, index) => (
+                            <li key={index}>{interest}</li>
+                        ))}
+                    </ul>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
