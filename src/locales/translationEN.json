@@ -50,5 +50,19 @@
   "contact.message": "Message",
   "contact.send": "Send",
 
-  "footer.rights": "All rights reserved."
+  "footer.rights": "All rights reserved.",
+
+  "projects": {
+    "title": "My Projects",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "project1": {
+      "title": "Project 1",
+      "description": "Description of project 1. This is a sample project description."
+    },
+    "project2": {
+      "title": "Project 2",
+      "description": "Description of project 2. This is another sample project description."
+    }
+  }
 }

@@ -50,5 +50,19 @@
   "contact.message": "Wiadomość",
   "contact.send": "Wyślij",
 
-  "footer.rights": "Wszelkie prawa zastrzeżone."
+  "footer.rights": "Wszelkie prawa zastrzeżone.",
+
+  "projects": {
+    "title": "Moje Projekty",
+    "previousImage": "Poprzednie zdjęcie",
+    "nextImage": "Następne zdjęcie",
+    "project1": {
+      "title": "Projekt 1",
+      "description": "Opis projektu 1. To jest przykładowy opis projektu."
+    },
+    "project2": {
+      "title": "Projekt 2",
+      "description": "Opis projektu 2. To jest inny przykładowy opis projektu."
+    }
+  }
 }

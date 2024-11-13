@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import About from './components/About'
-import Portfolio from './components/Portfolio'
+import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -23,7 +23,7 @@ export default function App() {
             <main className="container mx-auto px-4">
                 <Home />
                 <About />
-                <Portfolio />
+                <Projects />
                 <Contact />
             </main>
             <Footer />
