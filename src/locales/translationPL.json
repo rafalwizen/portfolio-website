@@ -44,11 +44,21 @@
   "portfolio.responsibilities": "Obowiązki",
   "portfolio.technologies": "Technologie",
 
-  "contact.title": "Kontakt",
-  "contact.name": "Imię",
-  "contact.email": "Email",
-  "contact.message": "Wiadomość",
-  "contact.send": "Wyślij",
+  "contact": {
+    "title": "Kontakt",
+    "name": "Imię",
+    "phone": "Telefon",
+    "email": "E-mail",
+    "message": "Wiadomość",
+    "send": "Wyślij",
+    "sending": "Wysyłanie...",
+    "successTitle": "Wiadomość wysłana",
+    "successMessage": "Dziękujemy za kontakt. Odpowiemy najszybciej jak to możliwe.",
+    "errorTitle": "Błąd",
+    "errorMessage": "Przepraszamy, wystąpił problem z wysłaniem wiadomości. Spróbuj ponownie później.",
+    "tryAgain": "Spróbuj ponownie"
+  },
+
 
   "footer.rights": "Wszelkie prawa zastrzeżone.",
 

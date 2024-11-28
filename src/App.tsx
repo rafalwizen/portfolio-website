@@ -6,6 +6,8 @@ import About from './components/About'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import { ToastProvider } from "@/components/ui/toast"
+import { Toaster } from "@/components/ui/toaster"
 
 export default function App() {
     const { t, i18n } = useTranslation()
@@ -18,15 +20,18 @@ export default function App() {
     }
 
     return (
-        <div className="bg-white text-black min-h-screen">
-            <Navbar toggleLanguage={toggleLanguage} language={language} />
-            <main className="container mx-auto px-4">
-                <Home />
-                <About />
-                <Projects />
-                <Contact />
-            </main>
-            <Footer />
-        </div>
+        <ToastProvider>
+            <div className="bg-white text-black min-h-screen">
+                <Navbar toggleLanguage={toggleLanguage} language={language} />
+                <main className="container mx-auto px-4">
+                    <Home />
+                    <About />
+                    <Projects />
+                    <Contact />
+                </main>
+                <Footer />
+                <Toaster />
+            </div>
+        </ToastProvider>
     )
 }
