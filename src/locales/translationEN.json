@@ -73,5 +73,12 @@
       "title": "Project 2",
       "description": "Description of project 2. This is another sample project description."
     }
+  },
+
+  "technologies": {
+    "title": "Technologies",
+    "java": "Java is a versatile, object-oriented programming language that enables building scalable server applications. I use Java to create efficient backend applications and microservices.",
+    "react": "React is a JavaScript library for building user interfaces. I use React to create interactive and responsive web applications, utilizing the latest features and best practices.",
+    "sql": "SQL (Structured Query Language) is a database query language. I use SQL for designing, managing, and optimizing databases in projects, ensuring efficient data storage and retrieval."
   }
 }

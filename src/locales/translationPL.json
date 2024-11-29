@@ -74,5 +74,13 @@
       "title": "Projekt 2",
       "description": "Opis projektu 2. To jest inny przykładowy opis projektu."
     }
+  },
+
+  "technologies": {
+    "title": "Technologie",
+    "java": "Java to wszechstronny, obiektowy język programowania, który pozwala na tworzenie skalowalnych aplikacji serwerowych. Wykorzystuję Javę do tworzenia wydajnych aplikacji backendowych i mikrousług.",
+    "react": "React to biblioteka JavaScript do budowania interfejsów użytkownika. Używam Reacta do tworzenia interaktywnych i responsywnych aplikacji webowych, wykorzystując najnowsze funkcje i najlepsze praktyki.",
+    "sql": "SQL (Structured Query Language) to język zapytań do baz danych. Wykorzystuję SQL do projektowania, zarządzania i optymalizacji baz danych w projektach, zapewniając efektywne przechowywanie i pobieranie danych."
   }
+
 }

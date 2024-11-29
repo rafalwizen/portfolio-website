@@ -7,5 +7,10 @@ export default {
     theme: {
         extend: {},
     },
+    variants: {
+        extend: {
+            opacity: ['group-hover'],
+        },
+    },
     plugins: [],
 }
