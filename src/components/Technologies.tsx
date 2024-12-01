@@ -1,117 +1,98 @@
-'use client'
-
-import React, { useState, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useMediaQuery } from 'react-responsive'
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
-} from "./ui/dialog"
-import { Card, CardContent } from "./ui/card"
-import { Database, FileCode2, Codepen } from 'lucide-react'
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination } from 'swiper/modules';
+import { FileCode2, Codepen, Database } from 'lucide-react';
 
 interface Technology {
-    name: string
-    icon: React.ReactNode
-    description: string
+    name: string;
+    icon: React.ReactNode;
+    description: string;
 }
 
+const technologies: Technology[] = [
+    {
+        name: "Java",
+        icon: <FileCode2 className="w-12 h-12 text-black" />,
+        description: "Java to wszechstronny język programowania, używany w aplikacjach webowych i backendowych.",
+    },
+    {
+        name: "React",
+        icon: <Codepen className="w-12 h-12 text-black" />,
+        description: "React to biblioteka do budowy dynamicznych interfejsów użytkownika.",
+    },
+    {
+        name: "SQL",
+        icon: <Database className="w-12 h-12 text-black" />,
+        description: "SQL to język zapytań do zarządzania bazami danych.",
+    },
+    {
+        name: "Java",
+        icon: <FileCode2 className="w-12 h-12 text-black" />,
+        description: "Java to wszechstronny język programowania, używany w aplikacjach webowych i backendowych.",
+    },
+    {
+        name: "React",
+        icon: <Codepen className="w-12 h-12 text-black" />,
+        description: "React to biblioteka do budowy dynamicznych interfejsów użytkownika.",
+    },
+    {
+        name: "SQL",
+        icon: <Database className="w-12 h-12 text-black" />,
+        description: "SQL to język zapytań do zarządzania bazami danych.",
+    },
+];
+
 export default function Technologies() {
-    const { t } = useTranslation()
-    const [hoveredTech, setHoveredTech] = useState<Technology | null>(null)
-    const [selectedTech, setSelectedTech] = useState<Technology | null>(null)
-    const isMobile = useMediaQuery({ maxWidth: 767 })
-
-    const technologies: Technology[] = [
-        {
-            name: "Java",
-            icon: <FileCode2 className="w-10 h-10" />,
-            description: t('technologies.java'),
-        },
-        {
-            name: "React",
-            icon: <Codepen className="w-10 h-10" />,
-            description: t('technologies.react'),
-        },
-        {
-            name: "SQL",
-            icon: <Database className="w-10 h-10" />,
-            description: t('technologies.sql'),
-        },
-    ]
-
-    const handleMouseEnter = useCallback((tech: Technology) => {
-        if (!isMobile) {
-            setHoveredTech(tech)
-        }
-    }, [isMobile])
-
-    const handleMouseLeave = useCallback(() => {
-        if (!isMobile) {
-            setHoveredTech(null)
-        }
-    }, [isMobile])
-
-    const handleClick = useCallback((tech: Technology) => {
-        if (isMobile) {
-            setSelectedTech(tech)
-        }
-    }, [isMobile])
-
     return (
         <section id="technologies" className="py-20 bg-white">
-            <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold mb-12 text-center">{t('technologies.title')}</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="container mx-auto px-4 w-full">
+                <h2 className="text-3xl font-bold mb-12 text-center">Technologie</h2>
+                <Swiper
+                    modules={[Navigation, Pagination]}
+                    spaceBetween={50}
+                    slidesPerView={1}
+                    pagination={{
+                        clickable: true,
+                        el: '.swiper-pagination',
+                    }}
+                    navigation={{
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    }}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 40,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 50,
+                        },
+                        1024: {
+                            slidesPerView: 4,
+                            spaceBetween: 60,
+                        },
+                    }}
+                >
                     {technologies.map((tech) => (
-                        <div key={tech.name} className="relative group">
-                            <Card
-                                className="cursor-pointer transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1"
-                                onMouseEnter={() => handleMouseEnter(tech)}
-                                onMouseLeave={handleMouseLeave}
-                                onClick={() => handleClick(tech)}
-                            >
-                                <CardContent className="flex items-center gap-4 p-6">
+                        <SwiperSlide key={tech.name}>
+                            <div className="bg-white border border-gray-300 shadow-md p-6 text-center h-80 flex flex-col justify-between">
+                                <div className="flex justify-center mb-4">
                                     {tech.icon}
-                                    <span className="text-lg font-medium">{tech.name}</span>
-                                </CardContent>
-                            </Card>
-                            {!isMobile && (
-                                <div
-                                    className={`
-                    absolute z-10 left-0 right-0 top-full mt-2 
-                    bg-white border border-gray-200 rounded-md shadow-lg p-4 
-                    transition-all duration-300 
-                    ${hoveredTech === tech ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}
-                  `}
-                                >
-                                    <h3 className="text-lg font-semibold mb-2">{tech.name}</h3>
-                                    <p className="text-sm text-gray-600">{tech.description}</p>
                                 </div>
-                            )}
-                        </div>
+                                <h3 className="text-lg font-semibold">{tech.name}</h3>
+                                <p className="text-sm text-gray-600">{tech.description}</p>
+                            </div>
+                        </SwiperSlide>
                     ))}
-                </div>
-
-                <Dialog open={isMobile && selectedTech !== null} onOpenChange={() => setSelectedTech(null)}>
-                    {selectedTech && (
-                        <DialogContent>
-                            <DialogHeader>
-                                <DialogTitle className="flex items-center gap-2">
-                                    {selectedTech.icon}
-                                    <span>{selectedTech.name}</span>
-                                </DialogTitle>
-                                <DialogDescription className="mt-4">
-                                    {selectedTech.description}
-                                </DialogDescription>
-                            </DialogHeader>
-                        </DialogContent>
-                    )}
-                </Dialog>
+                    <div className="swiper-pagination"></div>
+                    <div className="swiper-button-next"></div>
+                    <div className="swiper-button-prev"></div>
+                </Swiper>
             </div>
         </section>
-    )
+    );
 }
